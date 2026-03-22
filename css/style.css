@@ -1,0 +1,315 @@
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header .logo,
+nav ul,
+header {
+    display: flex;
+}
+
+header {
+    justify-content: space-between;
+    padding: 0.5em 1.5em;
+}
+
+header.logo {
+    gap: 1em;
+}
+
+nav ul {
+    gap: 3em;
+}
+
+i {
+    padding-top: 0.2rem;
+}
+
+/* Footer */
+
+footer {
+    background-color: #202020;
+    color: #ECECEC;
+    text-align: center;
+    margin: 0;
+    font-size: 0.75em;
+    padding: 3em;
+}
+
+main,
+button {
+    flex: 1;
+    background-color: ECECEC;
+}
+
+main {
+    padding-bottom: 2rem;
+}
+/* Hero section */
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/Espresso-strawb-oat.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    color: white;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    margin: 1.25em;
+    max-width: 90%;
+}
+
+/* Typography */
+
+nav li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #505050;
+}
+
+h1 {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 0.75em
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+h3 {
+    color: #141414;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+h3:hover,
+h3:focus {
+    text-decoration: underline;
+}
+
+p {
+    margin: 0;
+}
+
+i {
+    margin: 0.5em;
+}
+
+.date,
+nav {
+    text-transform: uppercase;
+    font-size: 0.75em;
+}
+
+nav li:hover,
+nav li:focus {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+}
+
+.hero p {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    max-width: 60ch;
+}
+
+
+
+/* Posts section */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+}
+
+.posts-grid,
+.recent-posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    margin: 2rem 1rem;  
+}
+
+.posts-grid .post:nth-child(n + 7) {
+    display: none;
+}
+
+.posts-grid.show-all .post {
+    display: block;
+
+}
+
+.recent-posts-grid .post:nth-child(n + 4) {
+    display: none;
+}
+
+.post {
+    transition: opacity 0.3s ease;
+}
+
+.recent {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 232px;
+}
+
+.post-image, 
+.article-image {
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    text-decoration: underline; 
+}
+
+button:hover,
+button:focus {
+    color: #505050;
+}
+
+/* about me page */
+
+.profile-picture {
+    border-radius: 180px;
+    width: 180px;
+    height: 180px;
+    object-position: 90%;
+    margin: 0 1em 1em 0;
+}
+
+.intro,
+.about-me-text {
+    margin: 1rem;
+}
+
+.paragraph {
+    margin: 2rem 0;
+}
+
+/* recipe page */
+
+.post-header,
+.post-text {
+    margin: 1rem;
+}
+
+.article-image {
+    margin: 1rem;
+    width: 90%;
+    max-height: 400px;
+}
+
+.recipe {
+    background-color: rgb(196, 212, 237);
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px dotted grey;
+    border-radius: 3px;
+}
+
+/* Media queries */
+
+@media (min-width: 780px) {
+    .posts-grid,
+    .recent-posts-grid {
+        gap: 2em;
+        margin: 3rem 2rem;
+    }
+
+    .posts-grid {
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    }
+
+    .recent-posts-grid {
+        grid-template: 1fr / repeat(3, 1fr);
+    }
+
+    .container {
+        margin: 3rem;
+    }
+    
+    .hero {
+        height: 400px;
+    }
+
+    .intro,
+    .intro-text {
+        display: flex;
+    }
+
+    .intro {
+        margin: 1rem 2rem;
+    }
+
+    .intro-text {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-me-text {
+        margin: 0 4rem;
+    }
+
+    .post-text,
+    .recipe {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .post-text {
+        padding: 1rem 3rem;
+    }
+
+    .article-image {
+        display: block;
+        margin: 0 auto;
+        max-height: 450px;
+        max-width: 900px;
+        width: 100%;
+    }
+    .recipe {
+        margin-top: 2rem;
+    }
+}
+
