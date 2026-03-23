@@ -214,6 +214,7 @@ button:focus {
     border-radius: 180px;
     width: 180px;
     height: 180px;
+    object-fit: cover;
     object-position: 90%;
     margin: 0 1em 1em 0;
 }
